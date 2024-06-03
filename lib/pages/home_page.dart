@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wall/components/my_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,9 +16,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("H O M E"),
         actions: [
-          IconButton(onPressed: logout, icon: Icon(Icons.logout)),
+          
         ],
       ),
+      drawer:MyDrawer(),
 
     );
   }
