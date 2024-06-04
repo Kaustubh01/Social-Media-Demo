@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:wall/components/my_back_button.dart';
 import 'package:wall/helpers/helper_functions.dart';
 
 class UsersPage extends StatelessWidget {
@@ -8,8 +9,7 @@ class UsersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return Scaffold(
-      appBar: AppBar(
-        title: Text("U S E R S"),),
+
         body: StreamBuilder(
           stream: FirebaseFirestore.instance.collection("Users").snapshots(),
           builder: (context, snapshot){
@@ -27,15 +27,36 @@ class UsersPage extends StatelessWidget {
             }
 
             final users = snapshot.data!.docs;
-            return ListView.builder(itemCount: users.length, 
-            itemBuilder: (context, index){
-              final user = users[index];
+            return Column(
+              children: [
 
-              return ListTile(
-                title: Text(user['username']),
-                subtitle: Text(user['email']),
-              );
-            }
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 50,
+                    left: 25
+                  ),
+                  child: Row(
+                    children: [
+                      MyBackkButton(),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 25,),
+
+                Expanded(
+                  child: ListView.builder(itemCount: users.length, 
+                  padding: const EdgeInsets.all(0),
+                itemBuilder: (context, index){
+                  final user = users[index];
+                
+                  return ListTile(
+                    title: Text(user['username']),
+                    subtitle: Text(user['email']),
+                  );
+                }
+                ),
+            )],
             );
           },
           ),
