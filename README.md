@@ -13,5 +13,6 @@ A user can create his account using a username, email and password and login wit
 ![signup](https://github.com/Kaustubh01/Social-Media-Demo/assets/67229974/68be1d33-a42b-4cac-bacb-05a13a4721ee)
 
 # Home Screen:
-![home](https://github.com/Kaustubh01/Social-Media-Demo/assets/67229974/d231a830-8388-4bc2-adc8-bd847f98f713)
+![home](https://github.com/Kaustubh01/Social-Media-Demo/assets/67229974/33271ead-ab3a-4999-a23b-e06fcf1abbf3)
+
 
